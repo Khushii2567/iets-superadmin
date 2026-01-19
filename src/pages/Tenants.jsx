@@ -1,13 +1,18 @@
 import MainLayout from "../layout/MainLayout";
+import { useNavigate } from "react-router-dom";
 
 export default function Tenants() {
+  const navigate = useNavigate();
   return (
     <MainLayout>
       <div className="flex justify-between mb-4">
         <h2 className="text-2xl font-semibold">Tenant Management</h2>
-        <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">
-          + Onboard New Company
-        </button>
+        <button
+  onClick={() => navigate("/tenants/onboard")}
+  className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition"
+>
+  + Onboard New Company
+</button>
       </div>
 
       <div className="bg-white rounded-xl shadow-sm">
